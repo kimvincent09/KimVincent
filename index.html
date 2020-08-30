@@ -1,52 +1,644 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kim Vincent</title>
-</head>
-<body>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script type="javascript" src="js/bootstrap.min.js"></script>
     <style>
-        main{
-            display:grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            height: 100vh
-         
+        body {
+            margin: 0;
+            padding: 0;
         }
-        .title{
-            grid-column: 2/3;
+        .justify-content-end{
+            display: flex;
+            justify-content: flex-end;
         }
-        .navbar{
-            grid-column: 2/3;
+        #title{
+            background-color: black;
+        }
+
+        .sticky-top {
+            z-index: 2;
+            position: sticky;
+            top: 0;
+            opacity: 80%;
+        }
+
+        .item {
+            background: #333;
             text-align: center;
+            height: 500px !important;
         }
         a{
+            color: white;
+        }
+
+        .carousel {
+            margin-top: 20px;
+        }
+
+        .img-wrap {
+            width: 700px;
+            height: 500px;
+        }
+
+        .img-frame {
+            width: 100%;
+            filter: drop-shadow(2px 2px 10px grey);
+        }
+
+        .carousel-caption {
+            text-shadow: black 5px 2px 5px;
+        }
+
+        .intro {
+            color: white;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .tab-content {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 0px;
+        }
+
+        .nav-tabs {
+            margin-bottom: 0;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        .nav-tabs a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            letter-spacing: 0.5rem;
+            padding-bottom: 10px;
+        }
+
+        a:hover,
+        a:active {
+            color: green;
             text-decoration: none;
         }
-        li{
-            display: inline;
-            
+
+        .kim a {
+            color: darkblue;
         }
-        .img-wrap{
-            grid-row: 1/2;
-            grid-column:1/3;
+
+        #img {
+            position: relative;
+            top: -200px;
+        }
+
+        .gradient {
+            text-decoration-color: blue;
+        }
+
+        .greet {
+            text-align: center;
+        }
+
+        #nav {
+            text-decoration: none;
+            color: red;
+        }
+
+        .name {
+            color: cyan;
+        }
+
+        .role {
+            color: rgb(31, 255, 83);
+        }
+
+        #name,
+        #role {
+            font-size: 3em;
+            letter-spacing: 2rem;
+            transition: 3s linear all;
+        }
+
+        #particle-js:hover #name,
+        #purple:hover #role {
+            letter-spacing: 0.2rem;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #img {
+            width: 1000px;
+            position: relative;
+            top: 180px;
+        }
+
+        .my-tab {
+            background-color: black;
+        }
+
+        h2 {
+            color: black;
+            font-family: 'Lobster', cursive;
+            letter-spacing: 1rem;
+            text-align: center;
+        }
+
+        .txt {
+            color: black;
+        }
+
+        #grey {
+            background-color: rgb(198, 194, 194);
+        }
+
+        .row {
+            padding: 10px 10px 80px 10px;
+        }
+
+        #info {
+            display: flex;
             justify-content: center;
-            width: 100px;
+            justify-content: space-evenly;
         }
-        .img{
-            width: 100px;   
+
+        .badge {
+            font-size: medium;
         }
-        </style>
-        <main>
-            <ul class= navbar>
-                <li><a href = "index.html">Home</a></li>
-                <li><a href = "contact.html">Contact</a></li>
-                <li><a href = "about.html">About</a></li>
-            </ul>
-            <div class = "img-wrap">
-<img src = "Alday.jpg" class= "img">
+
+        .footer {
+            height: 50vh;
+        }
+
+        .footer h2 {
+            color: white;
+        }
+
+        #img-content {
+            display: none;
+        }
+
+        .text-over-img {
+            font-size: 1.2em;
+            color: black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .img {
+            width: 100%;
+            border: solid;
+            border-color: black;
+        }
+
+        #img-content {
+            text-align: center;
+            display: block;
+        }
+
+        .about {
+            padding-bottom: 10px;
+        }
+
+        .btn-rainbow {
+            background: dodgerblue;
+            transition: 1s all linear;
+            letter-spacing: 0.5rem;
+        }
+
+        .btn-rainbow:hover {
+            background: transparent;
+            border: solid;
+            animation: rainbow 5s infinite;
+        }
+
+        @keyframes rainbow {
+            14% {
+                border-color: #ff0000
+            }
+
+            28% {
+                border-color: orange
+            }
+
+            42% {
+                border-color: yellow
+            }
+
+            56% {
+                border-color: green
+            }
+
+            70% {
+                border-color: blue
+            }
+
+            84% {
+                border-color: indigo
+            }
+
+            100% {
+                border-color: violet
+            }
+
+        }
+
+        @keyframes bcg {
+            50% {
+                background-image: url(itl.cat_computer-wallpaper_157409.png)
+            }
+
+            100% {
+                background-image: url(starry-sky-998641.jpg)
+            }
+        }
+
+        #info h4 {
+            color: white;
+        }
+
+        hr {
+            background-color: black;
+            height: 5px;
+        }
+
+        .starry {
+            background-image: url(starry-sky-998641.jpg);
+            background-size: cover;
+            animation: 3s bcg linear;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            height: 100vh;
+        }
+
+        .profpic {
+            grid-column: 1/2;
+            grid-row: 3/4;
+
+        }
+
+        .welcome {
+            grid-column: 2/4;
+            grid-row: 2/4;
+
+        }
+
+        h1 {
+            text-shadow: black 2px 2px 2px;
+        }
+
+        .img-container {
+            width: 6rem;
+            filter: drop-shadow(2px 2px 10px rgb(5, 23, 128));
+        }
+
+        @media(max-width: 1200px) {
+            #img {
+                display: none;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            #img {
+                width: 300px;
+                position: relative;
+                top: -30px;
+                left: 10px;
+                border-radius: 1000px;
+                border-style: dotted;
+                border-color: cornflowerblue;
+            }
+
+            #name {
+                color: white;
+            }
+
+            .burg-tabs a {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: large;
+                background-color: black;
+            }
+
+            .img-content {
+                text-align: center;
+            }
+
+        }
+
+        @media(max-width:768px) {
+            .img-wrap {
+                width: 500px;
+                height: 300px;
+            }
+
+            .slide {
+                display: none;
+            }
+
+            .item {
+                height: 300px !important;
+            }
+
+            .greet {
+                position: relative;
+                top: 20px;
+            }
+
+            figcaption {
+                color: black;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .profpic {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+
+            .welcome {
+                grid-column: 1/4;
+                grid-row: 2/4;
+            }
+
+            .img-frame {
+                border-radius: 1000px;
+                border: solid white;
+            }
+        }
+
+        @media(max-width:600px) {
+            #tab {
+                display: none;
+            }
+
+            .main {
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                font-size: 1em;
+            }
+
+            .profpic {
+                display: none;
+            }
+
+            .welcome {
+                grid-row: 2/4;
+            }
+        }
+
+        #name,
+        #role {
+            font-size: 3em;
+            letter-spacing: 0.5rem;
+            transition: 3s linear all;
+        }
+
+        .img-container {
+            width: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Main Page -->
+    <div class="main intro starry">
+        <div class="profpic greet">
+            <img src="icon3.png" class="img-frame">
+        </div>
+        <div class="welcome  greet" id="particles-js">
+            <h1 id="name">Hi, I'm <span class="name">Kim Vincent.</span></h1>
+            <h1 id="role">I'm a <span class="role">Web Developer</span></h1>
+            <br>
+            <a href="#about"><input type="button" value="View Profile" class="btn-rainbow btn-info btn-lg"></a>
+        </div>
     </div>
-    </main>
+    </div>
+
+    <!-- Navigation Bar -->
+    <ul class="nav nav-tabs my-tab justify-content-end sticky-top" id="about">
+        <li id="tab"><a href="#"><span class="fa fa-home"></span> Home</a></li>
+        <li id="tab"><a href="#About"><span class="fa fa-user"></span> About</a></li>
+        <li id="tab" class="#"><a href="#Portfolio"><span class="fa fa-pencil"></span> Projects</a></li>
+        <li id="tab"><a href="#number"><span class="fa fa-phone"></span> Contact</a></li>
+    </ul>
+
+    <!-- About Page -->
+    <div class="row kim" id="grey">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+            <hr>
+            <h2 class="justify-content-center">About</h2>
+            <hr>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4><a href="#educ" data-toggle="collapse"><span class="glyphicon glyphicon-education">
+                            Education</a></span></h4>
+                <div
+                    class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
+                    <div id="educ" class="collapse-in txt">Studied <span id="blue">Bachelor of Science in Computer
+                            Engineering</span> at <span id="maroon"> Polytechnic University of the Philippines Binan
+                            Campus</span>
+                        <div>Completed <span id="blue">Web Development Level III</span> at <span id="maroon">American
+                                Tesol Institute Philippines Inc.</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4><a href="#skills" data-toggle="collapse"><span class="glyphicon glyphicon-book"> Skills</span></a>
+                </h4>
+                <div
+                    class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
+                    <div id="skills" class="collapse-in txt">
+                        <div>
+                            <h4>Technologies</h4>
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+                            <span class="badge">Javascript</span>
+                            <span class="badge">PHP</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">Java</span>
+                            <span class="badge">C#</span>
+                            <span class="badge">Arduino</span>
+                            <span class="badge">Photoshop</span>
+                            <span class="badge">Video Editing</span>
+                            <span class="badge">Autocad</span>
+                            <span class="badge">CISCO Networking</span>
+                            <span class="badge">Electronics</span>
+
+                        </div>
+                        <div>
+                            <h4>Frameworks</h4>
+                            <span class="badge">Materialize</span>
+                            <span class="badge">Bootstrap</span>
+                            <span class="badge">Laravel</span>
+                            <span class="badge">Vue</span>
+                        </div>
+                        <div>
+                            <h4>Softskills</h4>
+                            <span class="badge">MS Office</span>
+                            <span class="badge">Research</span>
+                            <span class="badge">Writing</span>
+                            <span class="badge">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4><a href="#contact" data-toggle="collapse"><span class="glyphicon glyphicon-log-in">
+                            Experience</span></a></h4>
+                <div
+                    class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
+                    <div id="contact" class="collapse-in txt">
+                        <span id="blue">Web Design Intern</span> at <span id="maroon"> METRO incorporated</span>
+                        <div><span id="blue">Embedded System Programming Intern</span> at <span id="maroon">Rosetech
+                                Automation Inc.</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4><a href="#contact" data-toggle="collapse"><span class="glyphicon glyphicon-file"> Resume</span></a>
+                </h4>
+                <div
+                    class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
+                    <div id="contact" class="collapse-in txt">
+                        <span id="blue"><a href="documents/MyResume.pdf"><button class="btn btn-primary">Download
+                                    Here</button></a></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slideshow Page -->
+    <div class="row slide starry">
+        <div class="col-lg-12 col-md-12 col-sm-10 col-xs-12">
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
+                    <div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data target="#myCarousel" data-slide-to="1"></li>
+                            <li data target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <div class="col-lg-10 col-lg-offset-1 ">
+                                    <img src="55726320_395746594540082_6763541973199486976_n.jpg " class="img-wrap "
+                                        alt="Arduino Based Paper Vending Machine">
+                                    <div class="carousel-caption">
+                                        <h3><b>Arduino Based Paper Vending Machine</b></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+                                    <img src="ADMINLOGIN.jpg" alt="PUPBC Library Management System" class="img-wrap ">
+                                    <div class="carousel-caption">
+                                        <h3><b>PUPBC Library Management System</b></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+                                    <img src="75279254_1317993971738068_4785850734736310272_n.jpg" class="img-wrap "
+                                        alt="PUPBC Plastic Bottle Operated Water and Reverse Vending Machine">
+                                    <div class="carousel-caption">
+                                        <h3><b>PUPBC Plastic Bottle Operated Water and Reverse Vending Machine</b></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control left" href="#myCarousel" style="background-color: white;"
+                            data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="carousel-control right" href="#myCarousel" style="background-color: white;"
+                            data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Page -->
+    <div class="row" id="grey">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <hr>
+            <h2 id="Portfolio">Projects</h2>
+            <hr>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <img src="55726320_395746594540082_6763541973199486976_n.jpg" class="img">
+                <figcaption class="text-over-img">Arduino Based Paper Vending Machine</figcaption>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <img src="75279254_1317993971738068_4785850734736310272_n.jpg" class="img">
+                <figcaption class="text-over-img">Plastic Bottle Operated Water and Reverse Vending Machine</figcaption>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <img src="ADMINLOGIN.jpg" class="img">
+                <figcaption class="text-over-img">PUPBC Library Management System</figcaption>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="row footer starry">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="title">
+            <hr>
+            <h2 id="number">Contact</h2>
+            <hr>
+            </div>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div id="info">
+                        <a href="www.facebook.com/kimvincent09" data-toggle="collapse"><img src="images/facebook.png"
+                                class="img-container"></a>
+                        <a href="https://github.com/kimvincentalday" data-toggle="collapse"><img src="images/github.png"
+                                class="img-container"></a>
+                        <a href="www.gmail.com/aldaykimvincent5" data-toggle="collapse"><img src="images/gmail.png"
+                                class="img-container"></a>
+                        <a href="www.twitter.com/aldzvinz" data-toggle="collapse"><img src="images/twitter.png"
+                                class="img-container"></a>
+                        <a href="www.linkedin.com/kimvincentalday" data-toggle="collapse"><img src="images/linkedin.png"
+                                class="img-container"></a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="particles.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type='text/javascript'
+            data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'cf0ccb7c-494d-446f-9d24-0ef10460353d', f: true }); done = true; } }; })();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="menubar.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
 </body>
+
 </html>
